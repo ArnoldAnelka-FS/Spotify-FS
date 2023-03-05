@@ -6,10 +6,15 @@
 # Prerequisites
 
 •MongoDB >= 5.1
+
 •NodeJS >= v16.13.0
+
 •npm >= v8.1.0
+
 •Brew >= v3.4.3 (if MacOS)
+
 •MySQL Server >= v8.0.28
+
 •Yarn >= v1.22.19
 
 •Chrome/Firefox/Safari/Edge >= Latest 2 major versions
@@ -40,9 +45,14 @@ To Run Express (backend)
 The links to the project are as follows:
 
 •http://localhost:3000 - Link to the frontend (Nuxt.js) application. This is the primary user interface of the Spotify application
+
 •http://localhost:3001 - Link to the backend (Express) API.
+
 •http://localhost:3001/spotify/v1 - Link to the Spotify API middleware.
+
 •http://localhost:3001/spotify/v1/status - Endpoint to check the status of our application's JWT. Returns true if a valid JWT exists. False otherwise.
+
 •http://localhost:3001/spotify/v1/login - Endpoint request a new JWT from Spotify using the authentication workflow
+
 •http://localhost:3001/spotify/v1/search - Endpoint for a general/global search to Spotify. Returns JSON of all results.
 
