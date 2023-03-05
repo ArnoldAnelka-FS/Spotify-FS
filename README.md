@@ -6,10 +6,10 @@
 # Prerequisites
 
 ### MongoDB >= 5.1
-NodeJS >= v16.13.0
-npm >= v8.1.0
-Yarn >= v1.22.19
-Chrome/Firefox/Safari/Edge >= Latest 2 major versions
+### NodeJS >= v16.13.0
+### npm >= v8.1.0
+### Yarn >= v1.22.19
+### Chrome/Firefox/Safari/Edge >= Latest 2 major versions
 
 ## Other Considerations
 Ports 3000, and 3001 must be open on host OS. Make sure no other applications are running on those ports by running the following command:
