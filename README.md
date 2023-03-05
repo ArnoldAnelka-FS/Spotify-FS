@@ -1,1 +1,2 @@
-# Spotify PP3
+# Spotify API Project Overview
+## Description: This API is designed to serve as a music search using the Spotify Web API. The user will be allowed to display the artists that are searched along with their albums and tracks. 
