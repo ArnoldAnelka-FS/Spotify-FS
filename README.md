@@ -1,7 +1,7 @@
 # Spotify API Project Overview
 
 
-### Description: This API is designed to serve as a music search using the Spotify Web API. The user will be allowed to display the artists that are searched along with their albums and tracks. 
+### Description: This API is designed to serve as a music search using the Spotify Web API. The user will be allowed to display the artists that are searched along with their albums and shows. 
 
 # Prerequisites
 
@@ -15,7 +15,7 @@
 
 •MySQL Server >= v8.0.28
 
-•Yarn >= v1.22.19
+•React >= v18
 
 •Chrome/Firefox/Safari/Edge >= Latest 2 major versions
 
@@ -36,14 +36,12 @@ yarn`
 
 After yarn has finished installing all of your node_modules you can now run the project. You will need to open two different bash sessions. One for the frontend app and one for the backend Express application.
 
-To Run Nuxt.js (frontend)
+To Run React.js (frontend)
 
-`cd nuxt
-yarn dev`
+`cd react
+npm start`
 
-To Run Express (backend)
 
-`yarn watch`
 
 # Links
 The links to the project are as follows:
