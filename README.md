@@ -13,14 +13,12 @@
 
 •Brew >= v3.4.3 (if MacOS)
 
-•MySQL Server >= v8.0.28
-
 •React >= v18
 
 •Chrome/Firefox/Safari/Edge >= Latest 2 major versions
 
 ## Other Considerations
-Ports 3000, and 3001 must be open on host OS. Make sure no other applications are running on those ports by running the following command:
+Ports 3000, and 8888 must be open on host OS. Make sure no other applications are running on those ports by running the following command:
 
 `sudo lsof -nP -i4TCP:3000 | grep LISTEN && sudo lsof -nP -i4TCP:3001 | grep LISTEN`
 
@@ -57,4 +55,3 @@ The links to the project are as follows:
 •http://localhost:3001/spotify/v1/login - Endpoint request a new JWT from Spotify using the authentication workflow
 
 •http://localhost:3001/spotify/v1/search - Endpoint for a general/global search to Spotify. Returns JSON of all results
-
