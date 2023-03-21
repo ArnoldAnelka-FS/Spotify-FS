@@ -1,10 +1,12 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
+const cors = require('cors');
+const bodyParser = require('body-parser');
 const axios = require('axios');
 const mongoose = require('mongoose');
 const querystring = require('node:querystring');
-const { CLIENT_SECRET, CLIENT_ID, REDIRECT_URL } = process.env;
+const { CLIENT_SECRET, CLIENT_ID, REDIRECT_URI } = process.env;
 
 const generateRandomString = (length) => {
     let text = '';
@@ -27,7 +29,7 @@ app.get('/login', (req, res) => {
     const queryParams = querystring.stringify({
         response_type: 'code',
         client_id: CLIENT_ID,
-        redirect_uri: REDIRECT_URL,
+        redirect_uri: REDIRECT_URI,
         state: state,
         scope: scope
     });
@@ -43,7 +45,7 @@ axios({
     data: querystring.stringify({
         grant_type: 'authorization_code',
         code: code,
-        redirect_uri: REDIRECT_URL
+        redirect_uri: REDIRECT_URI
      }),
     headers: { 
         'content-type': 'application/x-www-form-urlencoded','Authorization': `Basic ${new Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString('base64')}`,
@@ -52,12 +54,11 @@ axios({
 .then(response => {
     if (response.status === 200) {
 
-      const { access_token, refresh_token, expires_in } = response.data;
+      const { access_token, refresh_token } = response.data;
 
       const queryParams = querystring.stringify({
         access_token: access_token,
-        refresh_token: refresh_token,
-        expires_in: expires_in
+        refresh_token: refresh_token
       });
 
       // redirect to react app
@@ -70,9 +71,10 @@ axios({
   })
   .catch(error => {
     res.send(error);
+    console.log(error);
   });
 });
-
+// Refresh feature ********** 
 app.get('/refresh_token', (req, res) => {
     const { refresh_token } = req.query;
   
@@ -93,6 +95,7 @@ app.get('/refresh_token', (req, res) => {
       })
       .catch(error => {
         res.send(error);
+        console.log(error);
       });
   });
 

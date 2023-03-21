@@ -13,10 +13,7 @@ refreshToken: window.localStorage.getItem(LOCALSTORAGE_KEYS.refreshToken);
 expiresTime: window.localStorage.getItem(LOCALSTORAGE_KEYS.expiresIn);   
 timestamp: window.localStorage.getItem(LOCALSTORAGE_KEYS.timestamp);
 
-/**
- * Clear out all localStorage items we've set and reload the page
- * @returns {void}
- */
+
 export const logout = () => {
     // Clear all localStorage items
     for (const property in LOCALSTORAGE_KEYS) {
@@ -26,7 +23,7 @@ export const logout = () => {
     window.location = window.location.origin;
   };
 
-
+// Token refresh feature ********** 
 const hasTokenExpired = () => {
     const { accessToken, timestamp, expireTime } = LOCALSTORAGE_VALUES;
     if (!accessToken || !timestamp) {
@@ -35,7 +32,7 @@ const hasTokenExpired = () => {
     const millisecondsElapsed = Date.now() - Number(timestamp);
     return (millisecondsElapsed / 1000) > Number(expireTime);
   };
-
+// Token refresh feature ********** 
   const refreshToken = async () => {
     try {
       // Logout if there's no refresh token stored or we've managed to get into a reload infinite loop
