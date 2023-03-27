@@ -2,10 +2,12 @@ import React from 'react';
 
 
 function Header() {
-return <header style={styles.h1}>
+return <header className='App-top'>
         <img src="../spotify.svg" alt="logo" className="img fluid" style={{ height: '50%', width: '3%' }} >
         </img>
-      <input type="text" placeholder="Search..." className="Search"/>
+      <h1> Spotify App</h1>
+      
+     
 </header>
 }
       

@@ -17,6 +17,8 @@
 
 •Chrome/Firefox/Safari/Edge >= Latest 2 major versions
 
+•Bootstraps
+
 ## Other Considerations
 Ports 3000, and 8888 must be open on host OS. Make sure no other applications are running on those ports by running the following command:
 
